@@ -260,9 +260,10 @@ async function whatsAsena () {
             }
             else {
                 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var ov_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
+                const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
-                var ov_time = new Date().toLocaleString('EN', { timeZone: 'America/New_York' }).split(' ')[1]
-                const biography = '📅 ' + utch + '\n⌚ ' + ov_time +'\n\n🐺 WhatsAsena'
+                const biography = '📅 ' + utch + '\n⌚ ' + ov_time + '\n\ Eva'
                 await conn.setStatus(biography)
             }
         }
