@@ -136,7 +136,7 @@ async function whatsAsena () {
     var biography_var = ''
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
         biography_var = vars.AUTO_BİO
-    });
+     });
     setInterval(async () => { 
         if (biography_var == 'true') {
             if (conn.user.jid.startsWith('90')) { // Turkey
@@ -260,10 +260,9 @@ async function whatsAsena () {
             }
             else {
                 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                var ov_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
-                const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
-                const biography = '📅 ' + utch + '\n⌚ ' + ov_time + '\n\ Eva'
+                var ov_time = new Date().toLocaleString('EN', { timeZone: 'America/New_York' }).split(' ')[1]
+                const biography = '📅 ' + utch + '\n⌚ ' + ov_time +'\n\n🐺 WhatsAsena'
                 await conn.setStatus(biography)
             }
         }
@@ -274,7 +273,7 @@ async function whatsAsena () {
     var StrSes_Db = await WhatsAsenaDB.findAll({
         where: {
           info: 'StringSession'
-        }
+         }
     });
     if (os.userInfo().homedir !== clh.pay) return;
     const buff = Buffer.from(`${shs1}`, 'base64');  
