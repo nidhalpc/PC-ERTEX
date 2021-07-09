@@ -56,7 +56,7 @@
             "REASON": "Reason",
             "LAST_SEEN": "Last Seen",
             "IM_NOT_AFK": "```I am not AFK anymore!```",
-            "AFK_TEXT": "```My owner is not here at the moment.```",
+            "AFK_TEXT": "```I am Alone At World.```",
             "AFK_TEXT_NOMD": "I am bot!",
             "HOUR": "hour",
             "MINUTE": "minute",
@@ -72,9 +72,9 @@
             "MUST_TEXT": "```Please reply to any message```"
         },
         "heroku": {
-            "RESTART_DESC": "Restart WhatsAsena",
+            "RESTART_DESC": "Restart Eva",
             "RESTART_MSG": "```Restarting...```",
-            "SHUTDOWN_DESC": "Shutdown WhatsAsena",
+            "SHUTDOWN_DESC": "Shutdown Eva",
             "SHUTDOWN_MSG": "```Shutting down ⛔```",
             "DYNO_DESC": "Check heroku dyno usage",
             "DYNO_TOTAL": "```Total Quota```",
@@ -204,7 +204,7 @@
         "sticker": {
             "STICKER_DESC": "It converts your replied photo or video to sticker.",
             "NEED_REPLY": "*Reply to a photo or video!*",
-            "DOWNLOADING": "```Nissaram 🤠```"
+            "DOWNLOADING": "```Ithoke Enth...🤠```"
         },
         "system_stats": {
             "ALIVE_DESC": "Does bot work?",
