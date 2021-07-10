@@ -56,7 +56,7 @@
             "REASON": "kaaranam",
             "LAST_SEEN": "avasanam kandath",
             "IM_NOT_AFK": "```njan AFK aan!```",
-            "AFK_TEXT": "```ente owner ippo online illa.```",
+            "AFK_TEXT": "```njan ente lokath otakkannu```",
             "AFK_TEXT_NOMD": "njan bot aan!",
             "HOUR": "manikoor",
             "MINUTE": "minute",
@@ -217,13 +217,13 @@
         "updater": {
             "UPDATER_DESC": "update indo enn ariyaan.",
             "UPDATE": "*ningalude bot up-to-date aan!*",
-            "NEW_UPDATE": "*JulieMwolk Update und* \n\n update cheyummathin munb support groupil chodhikkuka , allenkkil error veran chance und\n\nChanges:\n```",
+            "NEW_UPDATE": "*Evak Update und* \n\n\n\nChanges:\n```",
             "UPDATE_NOW_DESC": "botine update cheyaan.",
             "UPDATING": "```Updating..🐥```",
             "INVALID_HEROKU": "*❌ ningal thanna Heroku information thett aan !*",
             "UPDATED": "*Updated 🤠✅*",
             "UPDATED_LOCAL": "*✅ vijayagaramayi Update cheythu!*",
-            "AFTER_UPDATE": "*👰 julieMwol Restarting ?*"
+            "AFTER_UPDATE": "*Eva Restarting ?*"
         },
         "weather": {
             "WEATHER_DESC": "ningal therrunna sthalathe kaalavastha kaanikkum.",
