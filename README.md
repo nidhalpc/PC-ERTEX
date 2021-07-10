@@ -17,8 +17,8 @@ Repl.it is less stable. Try Termux instead for qrcode generation.
 
 ### The Hard Method
 ``` js
-$ git clone https://github.com/anirudhsudheer/S-O-P-H-I-E.git
-$ cd S-O-P-H-I-E
+$ git clone https://github.com/anirudhsudheer/Eva.git
+$ cd Eva
 $ npm i @adiwajshing/baileys
 $ npm i chalk
 $ node qr.js
