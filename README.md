@@ -31,7 +31,7 @@ $ node qr.js
 ### WhatsNew
 
 ```
- .carbon = Fixed Bugs ✅🛠
+  Fixed Bugs ✅🛠
 
 ```
 
