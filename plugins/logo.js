@@ -118,7 +118,7 @@ Asena.addCommand({pattern: 'sandwriting ?(.*)', fromMe: false, dontAddCommandLis
 
     var webimage = await axios.get(`https://api.xteam.xyz/textpro/sandwriting?text=${match[1]}&APIKEY=eb32cf4b9f2a1190`, { responseType: 'arraybuffer' })
 
-   await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Eva})
+   await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: 'Eva'})
 
     }));
 
