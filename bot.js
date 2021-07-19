@@ -136,10 +136,17 @@ async function whatsAsena () {
     var biography_var = ''
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
         biography_var = vars.AUTO_BİO
-     });
+    });
     setInterval(async () => { 
         if (biography_var == 'true') {
-         if (conn.user.jid.startsWith('994')) { // Azerbayjan
+            if (conn.user.jid.startsWith('90')) { // Turkey
+                var ov_time = new Date().toLocaleString('LK', { timeZone: 'Europe/Istanbul' }).split(' ')[1]
+                const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
+                const biography = '📅 ' + utch + '\n⌚ ' + ov_time + '\n\n🐺 WhatsAsena'
+                await conn.setStatus(biography)
+            }
+            else if (conn.user.jid.startsWith('994')) { // Azerbayjan
                 var ov_time = new Date().toLocaleString('AZ', { timeZone: 'Asia/Baku' }).split(' ')[1]
                 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 var utch = new Date().toLocaleDateString(config.LANG, get_localized_date)
