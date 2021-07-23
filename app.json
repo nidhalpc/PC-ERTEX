@@ -1,7 +1,7 @@
 {
     "name": "Eva",
     "description": "Eva project - Makes it easy and fun to use Whatsapp. World’s first UserBot made for WhatsApp.",
-    "logo": "https://telegra.ph/file/9283b45db4a7e8987a5d7.jpg",
+    "logo": "https://telegra.ph/file/6ae82e66e31e1e29fea73.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
     "repository": "https://github.com/anirudhsudheer/Eva",
     "website":   "https://t.me/phaticusthiccy",
@@ -24,7 +24,7 @@
         "BGM_FILTER": {
             "description": "If you likes bgm you can write 'true'. Otherwise false",
             "required": false,
-            "value": "true"
+            "value": "false"
         },
         "ANTİ_LİNK": {
             "description": "Link Engelleme Sistemi. Link Blocking System.",
