@@ -55,10 +55,10 @@ if (Config.WORKTYPE == 'private') {
     
         r_text[1] = "*Git links*\n           *\n💥═Eva Owner Anirudh.S═💥*\n\n*💘https://github.com/anirudhsudheer/Eva*\n*"
 
-    
-        await message.client.sendMessage(
+    await message.client.sendMessage(
             message.jid,(r_text[1]), MessageType.text);
     
         }));    
 
-    }}
+    }
+    
