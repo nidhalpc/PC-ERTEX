@@ -23,7 +23,7 @@ if (Config.WORKTYPE == 'private') {
 
         var r_text = new Array ();
     
-        r_text[1] = "*Git links*\n           *\n💥═Pikachu Owner Ameer Suhail═💥*\n\n*💘https://github.com/anirudhsudheer/Eva*\n*"
+        r_text[1] = "*Git links*\n           *\n💥═Eva Owner Anirudh═💥*\n\n*💘https://github.com/anirudhsudheer/Eva*\n*"
 
     
         await message.client.sendMessage(
