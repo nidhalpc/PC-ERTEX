@@ -1,7 +1,7 @@
 const asena = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
-const OWNER = "it sends details of owner"
-const GIT = "it sends links"
+const NEWUPDATE = "it sends NEW UPDATES"
+const CONTACT= "it sends links"
 const Config = require('../config');
 
 
@@ -10,20 +10,8 @@ if (Config.WORKTYPE == 'private') {
 
     var r_text = new Array ();
     
-    r_text[1] = "*These Are The New Updates*
-🔰️.eva Was Added - It Give Some Flim Dialouges
-🔰️New Plugins Were Added Into .txttoimg Command(Some Plugins DonT Work)
-🔰️.owner Command Was Added-It Give You The Details Of The Owner
-🔰️.theri Was Added-It Will Kick Those Who Say Somee Bad Words
-🔰️.pubg Command Was Added-It Will Give A PUBG Logo Type Like This
-✴️Eg:.pubg EVA
-🔰️.show Command Was Added-It Wil Give You The Details Of Series And Shows
-✴️Eg:.show Breaking Bad
-🔰️Created .ffire Command-It Will Give You Logo Of Freefire 
-✴️Eg:.ffire Eva
-*ENJOY WITH NEW UPDATES...🤗️*"
-
-    
+    r_text[1] = "*These Are The New Updates*🔰️.eva Was Added - It Give Some Flim Dialouges🔰️New Plugins Were Added Into .txttoimg Command(Some Plugins DonT Work)🔰️.owner Command Was Added-It Give You The Details Of The Owner🔰️.theri Was Added-It Will Kick Those Who Say Somee Bad Words🔰️.pubg Command Was Added-It Will Give A PUBG Logo Type Like This✴️Eg:.pubg EVA🔰️Created .ffire Command-It Will Give You Logo Of Freefire✴️Eg:.ffire Eva*ENJOY WITH NEW UPDATES...🤗️*" 
+ 
     await message.client.sendMessage(
         message.jid,(r_text[1]), MessageType.text);
 
