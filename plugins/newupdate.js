@@ -6,7 +6,7 @@ const Config = require('../config');
 
 
 if (Config.WORKTYPE == 'private') {
-        asena.addCommand({pattern: 'newupdate', fromMe: true, deleteCommand: true, desc: OWNER,}, (async (message, match) => {
+        asena.addCommand({pattern: 'newupdate', fromMe: true, deleteCommand: true, desc: NEWUPDATE,}, (async (message, match) => {
 
     var r_text = new Array ();
     
@@ -18,7 +18,7 @@ if (Config.WORKTYPE == 'private') {
     }));
 
 
-        asena.addCommand({pattern: 'contact', fromMe: true, deleteCommand: true, desc: GIT,}, (async (message, match) => {
+        asena.addCommand({pattern: 'contact', fromMe: true, deleteCommand: true, desc: CONTACT,}, (async (message, match) => {
 
         var r_text = new Array ();
     
@@ -34,7 +34,7 @@ if (Config.WORKTYPE == 'private') {
     
 
     if (Config.WORKTYPE == 'public') {
-        asena.addCommand({pattern: 'newupdate', fromMe: false, deleteCommand: true, desc: OWNER,}, (async (message, match) => {
+        asena.addCommand({pattern: 'newupdate', fromMe: false, deleteCommand: true, desc: UPDATE,}, (async (message, match) => {
 
     var r_text = new Array ();
     
@@ -49,7 +49,7 @@ if (Config.WORKTYPE == 'private') {
     }));
 
 
-        asena.addCommand({pattern: 'contact', fromMe: true, deleteCommand: true, desc: GIT,}, (async (message, match) => {
+        asena.addCommand({pattern: 'contact', fromMe: true, deleteCommand: true, desc: CONTACT,}, (async (message, match) => {
 
         var r_text = new Array ();
     
