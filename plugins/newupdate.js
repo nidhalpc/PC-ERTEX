@@ -10,7 +10,7 @@ if (Config.WORKTYPE == 'private') {
 
     var r_text = new Array ();
     
-    r_text[1] = "*These Are The New Updates*🔰️.eva Was Added - It Give Some Flim Dialouges🔰️New Plugins Were Added Into .txttoimg Command(Some Plugins DonT Work)🔰️.owner Command Was Added-It Give You The Details Of The Owner🔰️.theri Was Added-It Will Kick Those Who Say Somee Bad Words🔰️.pubg Command Was Added-It Will Give A PUBG Logo Type Like This✴️Eg:.pubg EVA🔰️Created .ffire Command-It Will Give You Logo Of Freefire✴️Eg:.ffire Eva*ENJOY WITH NEW UPDATES...🤗️*" 
+    r_text[1] = "*These Are The New Updates*\n\n🔰️.eva Was Added - It Give Some Flim Dialouges\n\n🔰️New Plugins Were Added Into .txttoimg Command(Some Plugins DonT Work)\n\n🔰️.owner Command Was Added-It Give You The Details Of The Owner\n\n🔰️.theri Was Added-It Will Kick Those Who Say Somee Bad Words\n\n🔰️.pubg Command Was Added-It Will Give A PUBG Logo Type Like This✴️Eg:.pubg EVA\n\n🔰️Created .ffire Command-It Will Give You Logo Of Freefire✴️Eg:.ffire Eva\n\n🔰️Last Updated In *Jul 27 8 pm8\n\n*ENJOY WITH NEW UPDATES...🤗️*" 
  
     await message.client.sendMessage(
         message.jid,(r_text[1]), MessageType.text);
@@ -39,7 +39,7 @@ if (Config.WORKTYPE == 'private') {
     var r_text = new Array ();
     
     
-        r_text[1] = "*These Are The New Updates*🔰️.eva Was Added - It Give Some Flim Dialouges🔰️New Plugins Were Added Into .txttoimg Command(Some Plugins DonT Work)🔰️.owner Command Was Added-It Give You The Details Of The Owner🔰️.theri Was Added-It Will Kick Those Who Say Somee Bad Words🔰️.pubg Command Was Added-It Will Give A PUBG Logo Type Like This✴️Eg:.pubg EVA🔰️Created .ffire Command-It Will Give You Logo Of Freefire✴️Eg:.ffire Eva*ENJOY WITH NEW UPDATES...🤗️*" 
+        r_text[1] = "*These Are The New Updates*\n\n🔰️.eva Was Added - It Give Some Flim Dialouges\n\n🔰️New Plugins Were Added Into .txttoimg Command(Some Plugins DonT Work)\n\n🔰️.owner Command Was Added-It Give You The Details Of The Owner\n\n🔰️.theri Was Added-It Will Kick Those Who Say Somee Bad Words\n\n🔰️.pubg Command Was Added-It Will Give A PUBG Logo Type Like This✴️Eg:.pubg EVA\n\n🔰️Created .ffire Command-It Will Give You Logo Of Freefire✴️Eg:.ffire Eva\n\n🔰️Last Updated In *Jul 27 8 pm8\n\n*ENJOY WITH NEW UPDATES...🤗️*" 
 
 
     
