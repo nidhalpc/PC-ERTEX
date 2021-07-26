@@ -10,7 +10,7 @@ const axios = require('axios');
 
 Asena.addCommand({pattern: 'txttoimg', fromMe: false, desc: 'more txtit commands'}, (async (message, match) => {
   
-  await message.sendMessage('📱command : *.break*\n💎desc : change your text to wall breaking image.\n\n📱command : *.pubg*\n💎desc : change your text to pung image.\n\n📱command : *.phub*\n💎desc : change your text into pornhub logo.\n🏷️example : .phub BOT;X.\n\n📱command : *.blood*\n💎desc : change your text frozen blood on a glass\n\n📱command : *.1917*\n💎desc : change your text to a 1917 model image\n\n📱command : *.avengers*\n💎desc : change your text to avangers logo\n🏷️example : .avengers its;BOT X.\n\n📱command : *.boxed*\n💎desc : change your text to 3d boxed design\n\n📱command : *.window*\n💎desc : write your text on a foggy window \n\n📱command : .skywal\n💎desc : random sky wallpaper with given text\n\n📱command : *.holo*\n💎desc : change your text to holo design\n\n📱command : *.drop*\n💎desc : change your text into rain water drop.n\n📱command : *.flame*\n💎desc : text with fire effect.\n\n📱command : *.vtext*\n💎desc : text to video.\n\n📱command : *.ptext*\n💎desc : text to video.\n\n📱command : *.colortext*\n💎desc : text to colorfull video\n\n📱command : *.cloud*\n💎desc : text on cloud\n\n📱command : *.2ninja*\n💎desc : random ninja logo with given name.');
+  await message.sendMessage('📱command : *.break*\n💎desc : change your text to wall breaking image.\n\n📱command : *.pubg*\n💎desc : change your text to pubg image.\n\n📱command : *.phub*\n💎desc : change your text into pornhub logo.\n🏷️example : .phub BOT;X.\n\n📱command : *.blood*\n💎desc : change your text frozen blood on a glass\n\n📱command : *.1917*\n💎desc : change your text to a 1917 model image\n\n📱command : *.avengers*\n💎desc : change your text to avangers logo\n🏷️example : .avengers its;BOT X.\n\n📱command : *.boxed*\n💎desc : change your text to 3d boxed design\n\n📱command : *.window*\n💎desc : write your text on a foggy window \n\n📱command : .skywal\n💎desc : random sky wallpaper with given text\n\n📱command : *.holo*\n💎desc : change your text to holo design\n\n📱command : *.drop*\n💎desc : change your text into rain water drop.n\n📱command : *.flame*\n💎desc : text with fire effect.\n\n📱command : *.vtext*\n💎desc : text to video.\n\n📱command : *.ptext*\n💎desc : text to video.\n\n📱command : *.colortext*\n💎desc : text to colorfull video\n\n📱command : *.cloud*\n💎desc : text on cloud\n\n📱command : *.2ninja*\n💎desc : random ninja logo with given name.');
   
 }));
 
@@ -52,7 +52,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: false, dontAddCommandList: tru
         topText = split[0];
 }
 
-    var webimage = await axios.get(`https://api.xteam.xyz/textpro/pubglogo?text=${topText}&text2=${bottomText}&APIKEY=c54543feaaf41b7e`, { responseType: 'arraybuffer' })
+    var webimage = await axios.get(`https://api.zeks.xyz/api/pubglogo?text=${topText}&text2=${bottomText}&APIKEY=cjxJIn9eDletRHac3CG6CdvGxFH&text1`, { responseType: 'arraybuffer' })
 
    await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: '```HERE IT IS```'})
 
