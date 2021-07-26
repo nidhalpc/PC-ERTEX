@@ -17,7 +17,7 @@ if (Config.WORKTYPE == 'private') {
         topText = split[0];
 }
 
-        var ttinullimage = await axios.get(`https://api.zeks.xyz/api/pubglogo?apikey=cjxJIn9eDletRHac3CG6CdvGxFH&text1=Eva&text2=${encodeURIComponent(match[1])}`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`https://api.zeks.xyz/api/pubglogo?apikey=cjxJIn9eDletRHac3CG6CdvGxFH&text1=${topText}&text2=${bottomText}`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: '*Made by Eva*' })
 
@@ -27,10 +27,17 @@ if (Config.WORKTYPE == 'private') {
 else if (Config.WORKTYPE == 'public') {
 
     Asena.addCommand({ pattern: 'pubg ?(.*)', fromMe: false,dontAddCommandList: true}, (async (message, match) => {
-
+           
+     if (match[1] === '') return await message.sendMessage(need);
+          var topText, bottomText;
+    if (match[1].includes(';')) {
+        var split = match[1].split(';');
+        bottomText = split[1];
+        topText = split[0];
+}
         if (match[1] === '') return await message.sendMessage(need);
 
-        var ttinullimage = await axios.get(`https://api.zeks.xyz/api/pubglogo?apikey=cjxJIn9eDletRHac3CG6CdvGxFH&text1=Eva&text2=${encodeURIComponent(match[1])}`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`https://api.zeks.xyz/api/pubglogo?apikey=cjxJIn9eDletRHac3CG6CdvGxFH&text1=${topText}&text2=${bottomText}`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: '*Made by Eva*' })
 
