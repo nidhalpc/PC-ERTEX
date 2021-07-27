@@ -34,7 +34,7 @@ Asena.addCommand({pattern: 'find', fromMe: false, desc: FIND_DESC }, (async (mes
 
     ffmpeg(filePath).format('mp3').save('music.mp3').on('end', async () => {
 
-        form.append('api_token', '2bd1fcb3ccd15607f72cdbb527907ce6');
+        form.append('api_token', 'SUcKEWdDpYjtj2q045KNQCoDyCe');
 
         form.append('file', fs.createReadStream('./music.mp3'));
 
@@ -50,7 +50,7 @@ Asena.addCommand({pattern: 'find', fromMe: false, desc: FIND_DESC }, (async (mes
 
         }
 
-        await axios.post('https://api.audd.io/', form, configs).then(async (response) => {
+        await axios.post('https://api.zeks.xyz/api/searchmusic', form, configs).then(async (response) => {
 
             var res = response.data
 
