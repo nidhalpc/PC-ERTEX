@@ -135,7 +135,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: false, dontAddCommandList: tru
 
 }));
   
-   Asena.addCommand({pattern: 'holo ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   Asena.addCommand({pattern: 'holographic ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
