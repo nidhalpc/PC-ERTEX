@@ -108,6 +108,10 @@
             "description": "Fotoğrafların arkaplanını kaldırır. https://remove.bg",
             "required": false
         },
+        "DEEPAI_API_KEY": {
+            "description": "DeepAI Komutu İçin API Key. For DeepAI Command ===> https://github.com/phaticusthiccy/WhatsAsenaDuplicated/wiki/DeepAI-API-Key",
+            "required": false
+        },
         "ALIVE_MESSAGE": {
             "description": "Customizable Alive Message! Use => default, to change back.",
             "required": false,
