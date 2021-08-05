@@ -1,11 +1,11 @@
 {
     "name": "Eva",
     "description": "Eva project - Makes it easy and fun to use Whatsapp. World’s first UserBot made for WhatsApp.",
-    "logo": "https://telegra.ph/file/6ae82e66e31e1e29fea73.jpg",
+    "logo": "https://telegra.ph/file/fd4230902e75d397d8667.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
     "repository": "https://github.com/anirudhsudheer/Eva",
-    "website":   "https://t.me/phaticusthiccy",
-    "success_url": "https://t.me/AsenaSupport",
+    "website":   "https://wa.me/919539102851",
+    "success_url": "https://wa.me/919539102851",
     "stack": "container",
     "env": {
         "ASENA_SESSION": {
@@ -150,7 +150,7 @@
         "GAN_IMAGE": {
             "description": "Gan Style eklentisi için resim bağlantısı yazın. Type image link for Gan Style plugin.",
             "required": true,
-            "value": "https://i.hizliresim.com/loUtAb.jpg"
+            "value": "https://telegra.ph/file/fd4230902e75d397d8667.jpg"
         },
         "NO_ONLINE": {
             "description": "Çevrimiçi görünmek istemiyorsanız true yazın. Type true if you don't want to appear online.",
