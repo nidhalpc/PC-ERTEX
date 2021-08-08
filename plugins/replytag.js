@@ -4,7 +4,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 
 let handler  = async (m, { conn, text }) => {
   if (text) conn.sendFile(m.chat, 'TAG_REPLY' + encodeURIComponent(text), 'some.mp3', '', m, false, { asSticker: true })
-  else throw 'Uhm...TheText?'
+  else throw 'Uhm...The text?'
 }
 handler.help = ['tagg <teks>']
 handler.tags = ['mp3']
