@@ -17,7 +17,7 @@ if (Config.WORKTYPE == 'private') {
 
         if (match[1] === '') return await message.sendMessage(need);
 
-        var ttinullimage = await axios.get(`https://api.lolhuman.xyz/api/ephoto1/anonymhacker?apikey=7187e9cee7fada1e3c47025c&text=${encodeURIComponent(match[1])}&text2=Eva`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`https://api.lolhuman.xyz/api/ephoto1/anonymhacker?apikey=7187e9cee7fada1e3c47025c&text=${encodeURIComponent(match[1])}`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by Eva' })
 
@@ -30,7 +30,7 @@ else if (Config.WORKTYPE == 'public') {
 
         if (match[1] === '') return await message.sendMessage(need);
 
-        var ttinullimage = await axios.get(`hhttps://api.lolhuman.xyz/api/ephoto1/anonymhacker?apikey=7187e9cee7fada1e3c47025c&text=${encodeURIComponent(match[1])}&text2=Eva`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get(`hhttps://api.lolhuman.xyz/api/ephoto1/anonymhacker?apikey=7187e9cee7fada1e3c47025c&text=${encodeURIComponent(match[1])}`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by Eva' })
 
