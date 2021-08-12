@@ -42,4 +42,4 @@ else if (Config.WORKTYPE == 'public') {
             await message.client.sendMessage(message.jid,Config.OWNER + '\n\n--------------------', MessageType.text, { quoted: message.data });
         }
     }));
-}l
+}
