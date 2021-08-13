@@ -1032,7 +1032,7 @@ else if (config.WORKTYPE == 'public') {
         if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
 
         await axios
-          .get(`https://videfikri.com/api/github/?username=${userName}`)
+          .get(`https://api.lolhuman.xyz/api/github/?username=${userName}?apikey=ab7df38f1d53e257d50a575b`)
           .then(async (response) => {
 
             const {
