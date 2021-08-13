@@ -17,7 +17,7 @@ if (Config.WORKTYPE == 'private') {
 
         if (match[1] === '') return await message.sendMessage(need);
 
-        var ttinullimage = await axios.get('https://api.zeks.xyz/api/nulis?apikey=SUcKEWdDpYjtj2q045KNQCoDyCe&text=${encodeURIComponent(match[1])}&text2=Eva`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get('https://api.zeks.xyz/api/nulis/apikey=SUcKEWdDpYjtj2q045KNQCoDyCe&text=${encodeURIComponent(match[1])}&text2=Eva`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by Eva' })
 
@@ -30,7 +30,7 @@ else if (Config.WORKTYPE == 'public') {
 
         if (match[1] === '') return await message.sendMessage(need);
 
-        var ttinullimage = await axios.get('https://api.zeks.xyz/api/nulis?apikey=SUcKEWdDpYjtj2q045KNQCoDyCe&text=${encodeURIComponent(match[1])}&text2=Eva`, { responseType: 'arraybuffer' })
+        var ttinullimage = await axios.get('https://api.zeks.xyz/api/nulis/apikey=SUcKEWdDpYjtj2q045KNQCoDyCe&text=${encodeURIComponent(match[1])}&text2=Eva`, { responseType: 'arraybuffer' })
 
         await message.sendMessage(Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by Eva' })
 
