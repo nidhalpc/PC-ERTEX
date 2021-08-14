@@ -23,7 +23,7 @@ Asena.addCommand({pattern: 'find', fromMe: td, desc: Lang.FINDS_DESC}, (async (m
     });
     var form = new FormData();
     ffmpeg(filePath).format('mp3').save('music.mp3').on('end', async () => {
-        form.append('api_token', '2bd1fcb3ccd15607f72cdbb527907ce6');
+        form.append('api_token', 'SUcKEWdDpYjtj2q045KNQCoDyCe');
         form.append('file', fs.createReadStream('./music.mp3'));
         form.append('return', 'apple_music, spotify');
         var configs = {
@@ -31,7 +31,7 @@ Asena.addCommand({pattern: 'find', fromMe: td, desc: Lang.FINDS_DESC}, (async (m
                 ...form.getHeaders()
             }
         }
-        await axios.post('https://api.audd.io/', form, configs).then(async (response) => {
+        await axios.post('https://api.zeks.xyz/api/searchmusic?', form, configs).then(async (response) => {
             var res = response.data
             if (res === 'success') {
                 await message.client.sendMessage(message.jid, `${Lang.TITTLE_F} : ${res.title}\n${Lang.ARTIST_F} : ${res.artist}`, MessageType.text);
