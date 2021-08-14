@@ -14,7 +14,7 @@ const Lang = Language.getString('weather');
 if (Config.WORKTYPE == 'private') {
 	
 Asena.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , dontAddCommandList: false }, async (message, match) => {
-	const url = `https://docs-jojo.herokuapp.com/api/gsm_arena?q=${match[1]}`;
+	const url = `https://api.lolhuman.xyz/api/gsmarena?apikey=ab7df38f1d53e257d50a575b&query=${match[1]}`;
 	try {
 		const response = await got(url);
     
@@ -30,7 +30,7 @@ Asena.addCommand({pattern: 'device ?(.*)', fromMe: true, desc: Lang.DEVICE , don
 else if (Config.WORKTYPE == 'public') {
 	
 Asena.addCommand({pattern: 'device ?(.*)', fromMe: false, desc: Lang.DEVICE , dontAddCommandList: false }, async (message, match) => {
-	const url = `https://docs-jojo.herokuapp.com/api/gsm_arena?q=${match[1]}`;
+	const url = `https://api.lolhuman.xyz/api/gsmarena?apikey=ab7df38f1d53e257d50a575b&query=${match[1]}`;
 	try {
 		const response = await got(url);
     
