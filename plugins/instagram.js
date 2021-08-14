@@ -25,7 +25,7 @@ Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: true, usage: Lang.USAGE, 
     await message.sendMessage(infoMessage(Lang.LOADING))
 
     await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/igstalk?username=${userName}`)
+      .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
       .then(async (response) => {
         const {
           pic,
@@ -65,7 +65,7 @@ Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: false, usage: Lang.USAGE,
     await message.sendMessage(infoMessage(Lang.LOADING))
 
     await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/igstalk?username=${userName}`)
+      .get(`https://docs-jojo.herokuapp.com/api/stalk?username=${userName}`)
       .then(async (response) => {
         const {
           pic,
