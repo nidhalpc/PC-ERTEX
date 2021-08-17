@@ -1,7 +1,7 @@
 const Asena = require('../events');
 const { MessageType } = require('@adiwajshing/baileys');
 const got = require('got');
-//LyFE
+//anirudhsudheer
 Asena.addCommand({ pattern: 'movie2(.*)', fromMe: false, desc: "Shows movie info." }, (async (message, match) => {
 	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
 	let url = `https://api.lolhuman.xyz/api/lk21?apikey=7187e9cee7fada1e3c47025c&query=${match[1]}`
@@ -9,7 +9,7 @@ Asena.addCommand({ pattern: 'movie2(.*)', fromMe: false, desc: "Shows movie info
 	const json = JSON.parse(response.body);
 	if (json.Response != 'True') return await message.client.sendMessage(message.jid, '*Not found.*', MessageType.text, { quoted: message.data });
 	let msg = '```';
-        msg +='Thumbnail.  : ' + json.thumbnail + '\n\n';
+        msg +='Thumbnail  : ' + json.thumbnail + '\n\n';
 	msg += 'Title      : ' + json.Title + '\n\n';
 	msg += 'Year       : ' + json.Year + '\n\n';
 	msg += 'Rated      : ' + json.rating + '\n\n';
@@ -26,7 +26,7 @@ Asena.addCommand({ pattern: 'movie2(.*)', fromMe: false, desc: "Shows movie info
 	msg += 'BoxOffice  : ' + json.BoxOffice + '\n\n';
 	msg += 'Production : ' + json.Production + '\n\n';
 	msg += 'imdbRating : ' + json.imdbRating + '\n\n';
-        msg += 'Location   : ' + json.location. +  '\n\n';
+        msg += 'Location   : ' + json.location  +  '\n\n';
 	msg += 'imdbVotes  : ' + json.imdbVotes + '```';
 	await message.client.sendMessage(message.jid, msg, MessageType.text, { quoted: message.data });
 }));
