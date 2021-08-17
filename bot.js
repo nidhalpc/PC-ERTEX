@@ -76,9 +76,9 @@ async function whatsAsena () {
     var ggg = Buffer.from(clh.cd, 'base64')
     var ddd = ggg.toString('utf-8')
     clh.pay = ddd
-    const conn = new WAConnection();
-    const Session = new StringSession();
-    conn.version = [2, 2126, 14];
+    WhatsAsenaCN.version = new WAConnection();
+    WhatsAsenaCN.version = new StringSession();
+    WhatsAsenaCN.version = [2, 2126,14];
     setInterval(async () => { 
         var getGMTh = new Date().getHours()
         var getGMTm = new Date().getMinutes()
