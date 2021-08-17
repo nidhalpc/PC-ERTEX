@@ -26,6 +26,11 @@
             "required": false,
             "value": "false"
         },
+        "PROXY": {
+            "description": "Proxy Adresi. Proxy Address => http://some-host:1234",
+            "required": false,
+            "value": "false"
+        },
         "ANTI_LINK": {
             "description": "Link Engelleme Sistemi. Link Blocking System.",
             "required": true,
