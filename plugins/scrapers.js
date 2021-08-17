@@ -565,7 +565,7 @@ if (config.WORKTYPE == 'private') {
         if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
 
         await axios
-          .get(`https://videfikri.com/api/github/?username=${userName}`)
+          .get(`https://api.lolhuman.xyz/api/github/${userName}?apikey=7187e9cee7fada1e3c47025c`)
           .then(async (response) => {
 
             const {
@@ -1032,7 +1032,7 @@ else if (config.WORKTYPE == 'public') {
         if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
 
         await axios
-          .get(`https://api.lolhuman.xyz/api/github/?username=${userName}?apikey=ab7df38f1d53e257d50a575b`)
+          .get(`https://api.lolhuman.xyz/api/github/${userName}?apikey=7187e9cee7fada1e3c47025c`)
           .then(async (response) => {
 
             const {
