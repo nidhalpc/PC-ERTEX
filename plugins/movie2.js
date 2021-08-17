@@ -4,7 +4,7 @@ const got = require('got');
 //anirudhsudheer
 Asena.addCommand({ pattern: 'movie2(.*)', fromMe: false, desc: "Shows movie info." }, (async (message, match) => {
 	if (match[1] === '') return await message.client.sendMessage(message.jid, '```Give me a name.```', MessageType.text, { quoted: message.data });
-	let url = `https://api.lolhuman.xyz/api/lk21?apikey=7187e9cee7fada1e3c47025c&query=${match[1]}`
+	let url = `https://api.lolhuman.xyz/api/lk21?apikey=7187e9cee7fada1e3c47025c&query=${match[1]}&plot=full`
 	const response = await got(url);
 	const json = JSON.parse(response.body);
 	if (json.Response != 'True') return await message.client.sendMessage(message.jid, '*Not found.*', MessageType.text, { quoted: message.data });
