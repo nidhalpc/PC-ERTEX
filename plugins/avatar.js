@@ -7,7 +7,7 @@ const need = "Command Kazhinn Yanthankilum yazhuth muthe\n🗡🗡"
 
 if (Config.WORKTYPE == 'private') {
 
-  Asena.addCommand({ pattern: 'zavatar1 ?(.*)', fromMe: true, dontAddCommandList: true }, (async (message, match) => {
+  Asena.addCommand({ pattern: 'avatar(.*)', fromMe: true, dontAddCommandList: true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(need);
 
@@ -20,7 +20,7 @@ if (Config.WORKTYPE == 'private') {
 
 else if (Config.WORKTYPE == 'public') {
 
-  Asena.addCommand({ pattern: 'zavatar1 ?(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
+  Asena.addCommand({ pattern: 'avatar(.*)', fromMe: false, dontAddCommandList: true }, (async (message, match) => {
 
     if (match[1] === '') return await message.sendMessage(need);
 
