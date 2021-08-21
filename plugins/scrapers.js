@@ -1,8 +1,6 @@
 /* Copyright (C) 2020 Yusuf Usta.
-
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-
 WhatsAsena - Yusuf Usta
 */
 
@@ -217,7 +215,7 @@ if (config.WORKTYPE == 'private') {
         succ_on = 'Antilink Berhasil Dibuka!'
         succ_off = 'Antilink Berhasil Ditutup!'
     }
-    Asena.addCommand({pattern: 'antilink ?(.*)', fromMe: true, desc: l_dsc, usage: '.antilink on / off', onlyGroup: true }, (async (message, match) => {
+    Asena.addCommand({pattern: 'antilink ?(.*)', fromMe: true, desc: l_dsc, usage: '.antilink on / off' }, (async (message, match) => {
         const anti_status = `${config.ANTİLİNK}`
         if (match[1] == 'on') {
             if (anti_status == 'true') {
@@ -544,35 +542,18 @@ if (config.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);
-        
-        var img_list = await WhatsAsenaStack.search_image(match[1])
-        await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text);
-        var img1 = await axios.get(img_list.link1, {responseType: 'arraybuffer'})
-        var img2 = await axios.get(img_list.link2, {responseType: 'arraybuffer'})
-        var img3 = await axios.get(img_list.link3    Asena.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC}, (async (message, match) => { 
+        gis(match[1], async (error, result) => {
+            for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
+                var get = got(result[i].url, {https: {rejectUnauthorized: false}});
+                var stream = get.buffer();
+                
+                stream.then(async (image) => {
+                    await message.client.sendMessage(message.jid,image, MessageType.image);
+                });
+            }
 
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);
-        
-        var img_list = await WhatsAsenaStack.search_image(match[1])
-        await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text);
-        var img1 = await axios.get(img_list.link1, {responseType: 'arraybuffer'})
-        var img2 = await axios.get(img_list.link2, {responseType: 'arraybuffer'})
-        var img3 = await axios.get(img_list.link3, {responseType: 'arraybuffer'})
-        var img4 = await axios.get(img_list.link4, {responseType: 'arraybuffer'})
-        var img5 = await axios.get(img_list.link5, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(img1.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img2.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img3.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img4.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img5.data), MessageType.image)
-    }));, {responseType: 'arraybuffer'})
-        var img4 = await axios.get(img_list.link4, {responseType: 'arraybuffer'})
-        var img5 = await axios.get(img_list.link5, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(img1.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img2.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img3.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img4.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img5.data), MessageType.image)
+            message.reply(Lang.IMG.format((result.length < 5 ? result.length : 5), match[1]));
+        });
     }));
 
     Asena.addCommand({ pattern: 'github ?(.*)', fromMe: true, desc: Glang.GİTHUB_DESC }, async (message, match) => {
@@ -582,7 +563,7 @@ if (config.WORKTYPE == 'private') {
         if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
 
         await axios
-          .get(`https://api.lolhuman.xyz/api/github/${userName}?apikey=7187e9cee7fada1e3c47025c`)
+          .get(`https://videfikri.com/api/github/?username=${userName}`)
           .then(async (response) => {
 
             const {
@@ -1025,22 +1006,21 @@ else if (config.WORKTYPE == 'public') {
         await reply.delete();
     }));
 
-    Asena.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC}, (async (message, match) => { 
+    Asena.addCommand({pattern: 'img ?(.*)', fromMe: false, desc: Lang.IMG_DESC}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);
-        
-        var img_list = await WhatsAsenaStack.search_image(match[1])
-        await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text);
-        var img1 = await axios.get(img_list.link1, {responseType: 'arraybuffer'})
-        var img2 = await axios.get(img_list.link2, {responseType: 'arraybuffer'})
-        var img3 = await axios.get(img_list.link3, {responseType: 'arraybuffer'})
-        var img4 = await axios.get(img_list.link4, {responseType: 'arraybuffer'})
-        var img5 = await axios.get(img_list.link5, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(img1.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img2.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img3.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img4.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img5.data), MessageType.image)
+        gis(match[1], async (error, result) => {
+            for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
+                var get = got(result[i].url, {https: {rejectUnauthorized: false}});
+                var stream = get.buffer();
+                
+                stream.then(async (image) => {
+                    await message.client.sendMessage(message.jid,image, MessageType.image);
+                });
+            }
+
+            message.reply(Lang.IMG.format((result.length < 5 ? result.length : 5), match[1]));
+        });
     }));
 
     Asena.addCommand({ pattern: 'github ?(.*)', fromMe: false, desc: Glang.GİTHUB_DESC }, async (message, match) => {
@@ -1050,7 +1030,7 @@ else if (config.WORKTYPE == 'public') {
         if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
 
         await axios
-          .get(`https://api.lolhuman.xyz/api/github/${userName}?apikey=7187e9cee7fada1e3c47025c`)
+          .get(`https://videfikri.com/api/github/?username=${userName}`)
           .then(async (response) => {
 
             const {
