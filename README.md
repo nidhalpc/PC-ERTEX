@@ -17,12 +17,12 @@ Repl.it is less stable. Try Termux instead for qrcode generation.
 
 ### The Hard Method
 ``` js
-$ git clone https://github.com/anirudhsudheer/Eva.git
+$ git clone https://github.com/SudoAnirudh/Eva.git
 $ cd Eva
 $ npm i @adiwajshing/baileys
 $ npm i chalk
 $ node qr.js
 ```
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/anirudhsudheer/Eva)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SudoAnirudh/Eva)
 
 
