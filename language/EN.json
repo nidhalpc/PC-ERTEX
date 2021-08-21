@@ -155,7 +155,7 @@
             "PPING": "```Setting profile photo...```",
             "BLOCK_DESC": "Block user.",
             "UNBLOCK_DESC": "Unblock user.",
-            "BLOCKED": "🛑Don't Call Me🛑, You Are *Blocked* \n To *Unblock* Contact My Master https://wa.me/919539102851",
+            "BLOCKED": "🛑Don't Call Me🛑,You Are *Blocked* \n To *Unblock* Contact My Master https://wa.me/919539102851",
             "UNBLOCKED": "unblocked",
             "BLOCKED_UPPER": "Blocked!",
             "UNBLOCKED_UPPER": "Unblocked.",
@@ -184,12 +184,12 @@
             "TTS_DESC": "It converts text to sound.",
             "TTS_ERROR": "```Error, Speech example of your sentence couldn't be made!```",
             "SONG_DESC": "Uploads the song you wrote.",
-            "NEED_TEXT_SONG": "*Please write a song!*\n*Example:* ```.song Naadan Vibe```",
+            "NEED_TEXT_SONG": "*Please write a song!*\n*Example:* ```.song Astronouts In The Ocean```",
             "NO_RESULT": "*I couldn't find anything :(*",
             "DOWNLOADING_SONG": "\n*Searching your song 🎶*\n",
-            "UPLOADING_SONG": "\n*Uploading 📲 Use 🎧*\n",
+            "UPLOADING_SONG": "\n*Uploading 📲,Enjoy Your Favorite Song, Use 🎧 For Better Experience...*\n",
             "VIDEO_DESC": "Downloads video from YouTube.",
-            "NEED_VIDEO": "*Please write a video link!*\n*Example:* ```.video https://www.youtube.com/watch?v=nAFlVm5qeBc```",
+            "NEED_VIDEO": "*Please write a video link!*\n*Example:* ```.video https://www.youtube.com/```",
             "DOWNLOADING_VIDEO": "```Downloading...```",
             "UPLOADING_VIDEO": "```Uploading...```",
             "YT_DESC": "It searchs on YouTube.",
@@ -251,7 +251,7 @@
             "MODD_DESC": "Get modded app details from MODDROID.",
             "HMODD_DESC": "Get modded app details from HappyMod.",
             "NEED_APPNAME": "*Invalid Request,Provide an app name*",
-            "NOT_FOUNDMD": "```Sorry,I could not find such an app.\n Try using .happymod if .modd is not working 😖```",
+            "NOT_FOUNDMD": "```Sorry,I could not find such an app.```",
             "CM_DESC": "Get a compliment.",
             "NOT_FOUNDAC": "*Invalid Request*",
             "CM": "Hey,",
@@ -272,7 +272,7 @@
             "RMLINK": "Read More",
             "NEWS": "News Content",
             "NEWST": "News Title",
-             "NOT_FOUND": "```oops...I couldn't find a category with this name. 😖```",
+            "NOT_FOUND": "```oops...I couldn't find a category with this name. 😖```",
             "SONG": "Song",
             "ALBUM": "Album",
             "TITLE": "Title",
@@ -437,7 +437,7 @@
         "deepai": {
             "DEEPAI_DESC": "Runs the most powerful artificial intelligence tools using artificial neural networks.",
             "TEXT": "*You must enter text! Although I am a powerful artificial intelligence, I cannot read your thoughts!*",
-            "URL": "*You must enter the image URL!*\n*Example:* https://i.hizliresim.com/nrg50b.jpg"
+            "URL": "*You must enter the image URL!*\n*Example:* https://telegra.ph/file/fd4230902e75d397d8667.jpg"
         },
         "ttp": {
             "TTP_DESC": "Converts text to plain painting.",
@@ -470,7 +470,7 @@
             "SAVE_USAGE": "Reply a message and type .save or just use .save <Your note> without replying",
             "REPLY": "Please provide a note or reply to a message.",
             "SUCCESSFULLY_ADDED": "Successfully added new note, check your notes with .notes.",
-            "UNSUCCESSFUL": "Could not add note, please try again later or contact WhatsAsena developers.",
+            "UNSUCCESSFUL": "Could not add note, please try again later or contact My Master.",
             "DELETE_USAGE": "Deletes *all* your saved notes.",
             "SUCCESSFULLY_DELETED": "Successfully deleted all your notes."
         },
@@ -516,7 +516,7 @@
             "ARAT": "Searched Song:"
         },
         "github": {
-            "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy",
+            "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github SudoAnirudh",
             "REPLY": "```You Need To Type Any Username!```",
             "NOT": "```User not found!```",
             "FOLLOWERS": "Followers:",
