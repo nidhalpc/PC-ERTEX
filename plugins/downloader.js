@@ -11,7 +11,7 @@ const LOADING = "Downloading the Video..."
 const NOT_FOUNDFB = "Video Not Found"
 const CAPTION = "Caption"
 
-Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (message, match) => {
+Asena.addCommand({ pattern: 'insta(.*)', fromMe: false, desc: IG_DESC}, async (message, match) => {
 
     const userName = match[1]
 
@@ -20,7 +20,7 @@ Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: IG_DESC}, async (me
     await message.sendMessage(infoMessage("Downloading the Post..."))
 
     await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/igdown?url=${userName}`)
+      .get(`https://api.lolhuman.xyz/api/instagram?apikey=7187e9cee7fada1e3c47025c&url=${userName}`)
       .then(async (response) => {
         const {
           url,
