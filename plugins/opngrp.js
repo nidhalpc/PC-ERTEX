@@ -1,8 +1,3 @@
-/* Copyright (C) 2021 TERROR BOY.
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-WhiteDevil - TERROR BOY
-*/
 
 const Asena = require('../events');
 
@@ -13,7 +8,7 @@ const OP = ('This command for OPEN the  Group at MORNING');
 const code = ('!unmute')
 const FINAL = "```The group  has opened 🔓!```"
 const TMUTE = "Trying to open the group"
-const TST = "!tagall !gm"
+const TST = ".tagall .gm"
 const SCXR = "Opening..."
 Asena.addCommand({pattern: 'open', fromMe: true, deleteCommand: false, desc: OP,}, (async (message, match) => {
 
