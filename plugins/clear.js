@@ -21,3 +21,4 @@ Asena.addCommand({pattern: 'clear', fromMe: false, desc: END, dontAddCommandList
     await message.sendMessage('```cleaning chat...```');
     await message.client.modifyChat (message.jid, ChatModification.delete);
     await message.sendMessage('```🏳 Chat cleared 🏳```');
+}));
