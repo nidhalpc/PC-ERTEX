@@ -22,7 +22,7 @@ if (Config.LANG == 'ML') pic = 'ക്രമരഹിതമായ ആനിമ�
 if (Config.LANG == 'HI') pic = 'यादृच्छिक एनीमे फोटो भेजता है।', wr_usage = '*कृपया केवल* _normal_ *या* _nsfw_ *शब्दों का ही प्रयोग करें!*', giff = 'यादृच्छिक एनीमे वीडियो भेजता है।'
 if (Config.LANG == 'ID') pic = 'Mengirim foto anime acak.', wr_usage = '*Harap gunakan hanya* _normal_ *atau* _nsfw_ *kata-kata!*', giff = 'Mengirimkan video anime acak.'
 
-Asena.addCommand({pattern: 'animepic ?(.*)', fromMe: wk, desc: pic, usage: 'animepic normal // animepic nsfw'}, (async (message, match) => {
+Asena.addCommand({pattern: 'picanime ?(.*)', fromMe: wk, desc: pic, usage: 'animepic normal // animepic nsfw'}, (async (message, match) => {
   if (match[1] == 'normal') {
     var image_link = await WhatsAsenaStack.anime_wall('normal')
     var image_buffer = await axios.get(image_link, { responseType: 'arraybuffer' })
@@ -35,7 +35,7 @@ Asena.addCommand({pattern: 'animepic ?(.*)', fromMe: wk, desc: pic, usage: 'anim
     return await message.client.sendMessage(message.jid,wr_usage,MessageType.text)
   }
 }));
-Asena.addCommand({pattern: 'animegif ?(.*)', fromMe: wk, desc: giff, usage: 'animegif normal // animegif nsfw'}, (async (message, match) => {
+Asena.addCommand({pattern: 'gifanime ?(.*)', fromMe: wk, desc: giff, usage: 'animegif normal // animegif nsfw'}, (async (message, match) => {
   if (match[1] == 'normal') {
     var gif_link = await WhatsAsenaStack.anime_gif('normal')
     var gif_buffer = await axios.get(gif_link, { responseType: 'arraybuffer' })
