@@ -54,7 +54,7 @@ Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: true, usage: Lang.USAGE, 
         const profileBuffer = await axios.get(pic, {responseType: 'arraybuffer'})
 
         const msg = `
-        *${gives usename }*: ${username}    
+        *${username}*: ${username}    
         *${private_user}*: ${private_user}
         *${verified_user}*: ${verified_user}`
 
