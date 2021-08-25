@@ -41,7 +41,7 @@ Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: "Download conten
       )
   },
 )
-Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: true, usage: Gives details of user, desc: Lang.DESC }, async (message, match) => {
+Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: true, desc: Lang.DESC }, async (message, match) => {
 
     const userName = match[1]
 
