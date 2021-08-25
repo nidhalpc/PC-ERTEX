@@ -2,10 +2,14 @@
 */
 
 const Asena = require('../events');
-const {MessageType} = require('@adiwajshing/baileys');
+const { MessageType } = require('@adiwajshing/baileys');
 const axios = require('axios');
-const IG_DESC = "Downloads Image/Video From Instagram"
- 
+const Config = require('../config');
+
+const Language = require('../language');
+const { errorMessage, infoMessage } = require('../helpers');
+const Lang = Language.getString('instagram') ;
+
 Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: "Download content from insta link"}, async (message, match) => {
 
     const userName = match[1]
@@ -41,7 +45,7 @@ Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: "Download conten
       )
   },
 )
-Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: true, desc: Lang.DESC }, async (message, match) => {
+Asena.addCommand({ pattern: 'profinsta ?(.*)', fromMe: true, usage: Lang.USAGE, desc: Lang.DESC }, async (message, match) => {
 
     const userName = match[1]
 
