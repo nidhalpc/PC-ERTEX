@@ -24,7 +24,7 @@ Asena.addCommand({ pattern: 'mediafire ?(.*)', fromMe: false, dontAddCommandList
 
         await axios
 
-          .get(`https://api.xteam.xyz/dl/mediafire?url=${userName}&APIKEY=1fd8f49191915fef`)
+          .get(`https://api.xteam.xyz/dl/mediafire?url=${userName}&APIKEY=dece97b8c1307c7f`)
 
           .then(async (response) => {
 
