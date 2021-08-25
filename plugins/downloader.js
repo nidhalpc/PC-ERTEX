@@ -11,16 +11,16 @@ const LOADING = "Downloading the Video..."
 const NOT_FOUNDFB = "Video Not Found"
 const CAPTION = "Caption"
 
-Asena.addCommand({ pattern: 'insta(.*)', fromMe: false, desc: IG_DESC}, async (message, match) => {
+Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: true, desc: "Download content from insta link"}, async (message, match) => {
 
     const userName = match[1]
 
-    if (!userName) return await message.sendMessage(errorMessage(NEED_WORD))
+    if (!userName) return await message.sendMessage(errorMessage(Lang.NEED_WORDIGTV))
 
-    await message.sendMessage(infoMessage("Downloading the Post..."))
+    await message.sendMessage(infoMessage("Loading"))
 
     await axios
-      .get(`https://api.lolhuman.xyz/api/instagram?apikey=7187e9cee7fada1e3c47025c&url=${userName}`)
+      .get(`https://api.zeks.me/api/ig?apikey=SUcKEWdDpYjtj2q045KNQCoDyCe&url==${userName}`)
       .then(async (response) => {
         const {
           url,
@@ -32,17 +32,17 @@ Asena.addCommand({ pattern: 'insta(.*)', fromMe: false, desc: IG_DESC}, async (m
         const msg = `${type}`
 
 	 if (msg === 'image') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
-          caption: "Made By Eva"
+          caption: msg,
         })}
 		 	 
 	if (msg === 'video') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-          caption: "Made By Eva"
+          caption: msg,
         })}
 	
         
       })
       .catch(
-        async (err) => await message.sendMessage(errorMessage("Invaild Link, Please Enter a Vaild Instagram Link")),
+        async (err) => await message.sendMessage(errorMessage("error.Please check the link")),
       )
   },
 )
