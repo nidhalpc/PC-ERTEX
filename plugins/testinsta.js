@@ -1,3 +1,11 @@
+ codded by anirudhsudheer
+*/
+
+const Asena = require('../events');
+const {MessageType} = require('@adiwajshing/baileys');
+const axios = require('axios');
+const IG_DESC = "Downloads Image/Video From Instagram"
+ 
 Asena.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: "Download content from insta link"}, async (message, match) => {
 
     const userName = match[1]
