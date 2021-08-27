@@ -1,8 +1,6 @@
 /* Copyright (C) 2020 Yusuf Usta.
-
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-
 WhatsAsena - Yusuf Usta
 */
 
@@ -11,7 +9,6 @@ const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const translatte = require('translatte');
 const config = require('../config');
 const LanguageDetect = require('languagedetect');
-const WhatsAsenaStack = require('whatsasena-npm');
 const lngDetector = new LanguageDetect();
 const Heroku = require('heroku-client');
 const heroku = new Heroku({
@@ -219,27 +216,28 @@ if (config.WORKTYPE == 'private') {
         succ_off = 'Antilink Berhasil Ditutup!'
     }
     Asena.addCommand({pattern: 'antilink ?(.*)', fromMe: true, desc: l_dsc, usage: '.antilink on / off' }, (async (message, match) => {
+        const anti_status = `${config.ANTİLİNK}`
         if (match[1] == 'on') {
-            if (config.ANTILINK == 'true') {
+            if (anti_status == 'true') {
                 return await message.client.sendMessage(message.jid, '*' + alr_on + '*', MessageType.text)
             }
             else {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
-                        ['ANTI_LINK']: 'true'
+                        ['ANTİ_LİNK']: 'true'
                     } 
                 });
                 await message.client.sendMessage(message.jid, '*' + succ_on + '*', MessageType.text)
             }
         }
         else if (match[1] == 'off') {
-            if config.ANTI_LINK !== 'true') {
+            if (anti_status !== 'true') {
                 return await message.client.sendMessage(message.jid, '*' + alr_off + '*', MessageType.text)
             }
             else {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
-                        ['ANTI_LINK']: 'false'
+                        ['ANTİ_LİNK']: 'false'
                     } 
                 });
                 await message.client.sendMessage(message.jid, '*' + succ_off + '*', MessageType.text)
@@ -315,27 +313,28 @@ if (config.WORKTYPE == 'private') {
         succ_off_bio = 'Autobio Berhasil Ditutup!'
     }
     Asena.addCommand({pattern: 'autobio ?(.*)', fromMe: true, desc: auto_dsc, usage: '.autobio on / off' }, (async (message, match) => {
+        const bio_status = `${config.AUTOBİO}`
         if (match[1] == 'on') {
-            if (config.AUTOBIO == 'true') {
+            if (bio_status == 'true') {
                 return await message.client.sendMessage(message.jid, '*' + alr_on_bio + '*', MessageType.text)
             }
             else {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
-                        ['AUTO_BIO']: 'true'
+                        ['AUTO_BİO']: 'true'
                     } 
                 });
                 await message.client.sendMessage(message.jid, '*' + succ_on_bio + '*', MessageType.text)
             }
         }
         else if (match[1] == 'off') {
-            if (config.AUTOBIO !== 'true') {
+            if (bio_status !== 'true') {
                 return await message.client.sendMessage(message.jid, '*' + alr_off_bio + '*', MessageType.text)
             }
             else {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 
-                        ['AUTO_BIO']: 'false'
+                        ['AUTO_BİO']: 'false'
                     } 
                 });
                 await message.client.sendMessage(message.jid, '*' + succ_off_bio + '*', MessageType.text)
@@ -543,70 +542,65 @@ if (config.WORKTYPE == 'private') {
     Asena.addCommand({pattern: 'img ?(.*)', fromMe: true, desc: Lang.IMG_DESC}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);
-        
-        var img_list = await WhatsAsenaStack.search_image(match[1])
-        await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text);
-        var img1 = await axios.get(img_list.link1, {responseType: 'arraybuffer'})
-        var img2 = await axios.get(img_list.link2, {responseType: 'arraybuffer'})
-        var img3 = await axios.get(img_list.link3, {responseType: 'arraybuffer'})
-        var img4 = await axios.get(img_list.link4, {responseType: 'arraybuffer'})
-        var img5 = await axios.get(img_list.link5, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(img1.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img2.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img3.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img4.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img5.data), MessageType.image)
+        gis(match[1], async (error, result) => {
+            for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
+                var get = got(result[i].url, {https: {rejectUnauthorized: false}});
+                var stream = get.buffer();
+                
+                stream.then(async (image) => {
+                    await message.client.sendMessage(message.jid,image, MessageType.image);
+                });
+            }
+
+            message.reply(Lang.IMG.format((result.length < 5 ? result.length : 5), match[1]));
+        });
     }));
 
-    Asena.addCommand({ pattern: 'github ?(.*)', fromMe: true, desc: Glang.GİTHUB_DESC, usage: 'github SudoAnirudh// github SudoAnirudh/Eva' }, (async (message, match) => {
-      if (match[1].includes('/')) {
-        var data = WhatsAsenaStack.github_repos(match[1])
-        var Msg = WhatsAsenaStack.github_message(config.LANG)
-        if (data.username == undefined) return await message.client.sendMessage(message.jid, Msg.not_found_repo, MessageType.text)
-        var payload = Msg.repo.username + data.username + '\n' +
-          Msg.repo.repo_name + data.repo_name + '\n' +
-          Msg.repo.repo_id + data.repo_id + '\n' +
-          Msg.repo.repo_desc + data.repo_desc + '\n' +
-          Msg.repo.created_at + data.created_at + '\n' +
-          Msg.repo.updated_at + data.updated_at + '\n' +
-          Msg.repo.fork + data.fork == true ? '✅\n' : '❌\n' +
-          Msg.repo.size + data.size + 'KB' + '\n' +
-          Msg.repo.star + data.star + '\n' +
-          Msg.repo.forks + data.forks + '\n' +
-          Msg.repo.watcher + data.watcher + '\n' +
-          Msg.repo.subscribers + data.subscribers + '\n' +
-          Msg.repo.language + data.language + '\n' +
-          Msg.repo.issues + data.issues + '\n' +
-          Msg.repo.has_lisance + data.has_lisance == false ? '❌\n' : '✅\n' +
-          Msg.repo.lisance_key + data.lisance_key + '\n' +
-          Msg.repo.lisance_name + data.lisance_name + '\n' +
-          Msg.repo.branch + data.branch
-        await message.client.sendMessage(massage.jid, payload, MessageType.text)
-      } else {
-        var data = WhatsAsenaStack.github_user(match[1])
-        var Msg = WhatsAsenaStack.github_message(config.LANG)
-        if (data.status == false) return await message.client.sendMessage(message.jid, Msg.not_found_user, MassageType.text)
-        var payload = Msg.user.username + data.username + '\n' +
-          Msg.user.name + data.name == 'null' ? '' + '\n' : data.name + '\n' + 
-          Msg.user.biography + data.biography == 'null' ? '' + '\n' : data.biography + '\n' +
-          Msg.user.created_at + data.created_at + '\n' +
-          Msg.user.last_update + data.last_update + '\n' +
-          Msg.user.id + data.id + '\n' +
-          Msg.user.repos + data.repos + '\n' +
-          Msg.user.gists + data.gists + '\n' +
-          Msg.user.location + data.location == 'null' ? '' + '\n' : data.location + '\n' +
-          Msg.user.following + data.following + '\n' +
-          Msg.user.follower + data.follower + '\n' +
-          Msg.user.hireable + data.hireable == 'null' ? Msg.cant_rent + '\n' : Msg.can_rent + '\n'
-          Msg.user.blog + data.blog == false ? '' + '\n' : data.blog + '\n' +
-          Msg.user.twitter + data.twitter == 'null' ? '' + '\n' : data.twitter + '\n' +
-          Msg.user.company + data.company == 'null' ? '' + '\n' : data.company + '\n' +
-          Msg.user.mail + data.mail == 'null' ? '' + '\n' : data.mail
-        var bf = await axios.get(data.image, {responseType:'arraybuffer'})
-        await message.sendMessage(Buffer.from(bf.data), MessageType.image, { caption: payload })
-      }
-    }));
-        
+    Asena.addCommand({ pattern: 'github ?(.*)', fromMe: true, desc: Glang.GİTHUB_DESC }, async (message, match) => {
+
+        const userName = match[1]
+ 
+        if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
+
+        await axios
+          .get(`https://videfikri.com/api/github/?username=${userName}`)
+          .then(async (response) => {
+
+            const {
+              hireable,
+              company,
+              profile_pic,
+              username,
+              fullname, 
+              blog, 
+              location,
+              email,
+              public_repository,
+              biografi,
+              following,
+              followers,
+              public_gists,
+              profile_url,
+              last_updated,
+              joined_on,
+            } = response.data.result
+
+            const githubscrap = await axios.get(profile_pic, 
+              {responseType: 'arraybuffer',
+            })
+
+            const msg = `*${Glang.USERNAME}* ${username} \n*${Glang.NAME}* ${fullname} \n*${Glang.FOLLOWERS}* ${followers} \n*${Glang.FOLLOWİNG}* ${following} \n*${Glang.BİO}* ${biografi} \n*${Glang.REPO}* ${public_repository} \n*${Glang.GİST}* ${public_gists} \n*${Glang.LOCATİON}* ${location} \n*${Glang.MAİL}* ${email} \n*${Glang.BLOG}* ${blog} \n*${Glang.COMPANY}* ${company} \n*${Glang.HİRE}* ${hireable === "true" ? Glang.HİRE_TRUE : Glang.HİRE_FALSE} \n*${Glang.JOİN}* ${joined_on} \n*${Glang.UPDATE}* ${last_updated} \n*${Glang.URL}* ${profile_url}`
+
+            await message.sendMessage(Buffer.from(githubscrap.data), MessageType.image, { 
+              caption: msg,
+            })
+          })
+          .catch(
+            async (err) => await message.client.sendMessage(message.jid, Glang.NOT, MessageType.text),
+          )
+      },
+    )
+
     Asena.addCommand({pattern: 'lyric ?(.*)', fromMe: true, desc: Slang.LY_DESC }, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid, Slang.NEED, MessageType.text);
@@ -1015,68 +1009,64 @@ else if (config.WORKTYPE == 'public') {
     Asena.addCommand({pattern: 'img ?(.*)', fromMe: false, desc: Lang.IMG_DESC}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORDS,MessageType.text);
-        var img_list = await WhatsAsenaStack.search_image(match[1])
-        await message.client.sendMessage(message.jid, Lang.IMG.format(5, match[1]), MessageType.text);
-        var img1 = await axios.get(img_list.link1, {responseType: 'arraybuffer'})
-        var img2 = await axios.get(img_list.link2, {responseType: 'arraybuffer'})
-        var img3 = await axios.get(img_list.link3, {responseType: 'arraybuffer'})
-        var img4 = await axios.get(img_list.link4, {responseType: 'arraybuffer'})
-        var img5 = await axios.get(img_list.link5, {responseType: 'arraybuffer'})
-        await message.sendMessage(Buffer.from(img1.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img2.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img3.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img4.data), MessageType.image)
-        await message.sendMessage(Buffer.from(img5.data), MessageType.image)
+        gis(match[1], async (error, result) => {
+            for (var i = 0; i < (result.length < 5 ? result.length : 5); i++) {
+                var get = got(result[i].url, {https: {rejectUnauthorized: false}});
+                var stream = get.buffer();
+                
+                stream.then(async (image) => {
+                    await message.client.sendMessage(message.jid,image, MessageType.image);
+                });
+            }
+
+            message.reply(Lang.IMG.format((result.length < 5 ? result.length : 5), match[1]));
+        });
     }));
 
-    Asena.addCommand({ pattern: 'github ?(.*)', fromMe: false, desc: Glang.GİTHUB_DESC, usage: 'github phaticusthiccy // github phaticusthiccy/Emacs-Train' }, (async (message, match) => {
-      if (match[1].includes('/')) {
-        var data = WhatsAsenaStack.github_repos(match[1])
-        var Msg = WhatsAsenaStack.github_message(config.LANG)
-        if (data.username == undefined) return await message.client.sendMessage(message.jid, Msg.not_found_repo, MessageType.text)
-        var payload = Msg.repo.username + data.username + '\n' +
-          Msg.repo.repo_name + data.repo_name + '\n' +
-          Msg.repo.repo_id + data.repo_id + '\n' +
-          Msg.repo.repo_desc + data.repo_desc + '\n' +
-          Msg.repo.created_at + data.created_at + '\n' +
-          Msg.repo.updated_at + data.updated_at + '\n' +
-          Msg.repo.fork + data.fork == true ? '✅\n' : '❌\n' +
-          Msg.repo.size + data.size + 'KB' + '\n' +
-          Msg.repo.star + data.star + '\n' +
-          Msg.repo.forks + data.forks + '\n' +
-          Msg.repo.watcher + data.watcher + '\n' +
-          Msg.repo.subscribers + data.subscribers + '\n' +
-          Msg.repo.language + data.language + '\n' +
-          Msg.repo.issues + data.issues + '\n' +
-          Msg.repo.has_lisance + data.has_lisance == false ? '❌\n' : '✅\n' +
-          Msg.repo.lisance_key + data.lisance_key + '\n' +
-          Msg.repo.lisance_name + data.lisance_name + '\n' +
-          Msg.repo.branch + data.branch
-        await message.client.sendMessage(massage.jid, payload, MessageType.text)
-      } else {
-        var data = WhatsAsenaStack.github_user(match[1])
-        var Msg = WhatsAsenaStack.github_message(config.LANG)
-        if (data.status == false) return await message.client.sendMessage(message.jid, Msg.not_found_user, MassageType.text)
-        var payload = Msg.user.username + data.username + '\n' +
-          Msg.user.name + data.name == 'null' ? '' + '\n' : data.name + '\n' + 
-          Msg.user.biography + data.biography == 'null' ? '' + '\n' : data.biography + '\n' +
-          Msg.user.created_at + data.created_at + '\n' +
-          Msg.user.last_update + data.last_update + '\n' +
-          Msg.user.id + data.id + '\n' +
-          Msg.user.repos + data.repos + '\n' +
-          Msg.user.gists + data.gists + '\n' +
-          Msg.user.location + data.location == 'null' ? '' + '\n' : data.location + '\n' +
-          Msg.user.following + data.following + '\n' +
-          Msg.user.follower + data.follower + '\n' +
-          Msg.user.hireable + data.hireable == 'null' ? Msg.cant_rent + '\n' : Msg.can_rent + '\n'
-          Msg.user.blog + data.blog == false ? '' + '\n' : data.blog + '\n' +
-          Msg.user.twitter + data.twitter == 'null' ? '' + '\n' : data.twitter + '\n' +
-          Msg.user.company + data.company == 'null' ? '' + '\n' : data.company + '\n' +
-          Msg.user.mail + data.mail == 'null' ? '' + '\n' : data.mail
-        var bf = await axios.get(data.image, {responseType:'arraybuffer'})
-        await message.sendMessage(Buffer.from(bf.data), MessageType.image, { caption: payload })
-      }
-    }));
+    Asena.addCommand({ pattern: 'github ?(.*)', fromMe: false, desc: Glang.GİTHUB_DESC }, async (message, match) => {
+
+        const userName = match[1]
+ 
+        if (userName === '') return await message.client.sendMessage(message.jid, Glang.REPLY, MessageType.text)
+
+        await axios
+          .get(`https://videfikri.com/api/github/?username=${userName}`)
+          .then(async (response) => {
+
+            const {
+              hireable,
+              company,
+              profile_pic,
+              username,
+              fullname, 
+              blog, 
+              location,
+              email,
+              public_repository,
+              biografi,
+              following,
+              followers,
+              public_gists,
+              profile_url,
+              last_updated,
+              joined_on,
+            } = response.data.result
+
+            const githubscrap = await axios.get(profile_pic, 
+              {responseType: 'arraybuffer',
+            })
+
+            const msg = `*${Glang.USERNAME}* ${username} \n*${Glang.NAME}* ${fullname} \n*${Glang.FOLLOWERS}* ${followers} \n*${Glang.FOLLOWİNG}* ${following} \n*${Glang.BİO}* ${biografi} \n*${Glang.REPO}* ${public_repository} \n*${Glang.GİST}* ${public_gists} \n*${Glang.LOCATİON}* ${location} \n*${Glang.MAİL}* ${email} \n*${Glang.BLOG}* ${blog} \n*${Glang.COMPANY}* ${company} \n*${Glang.HİRE}* ${hireable === "true" ? Glang.HİRE_TRUE : Glang.HİRE_FALSE} \n*${Glang.JOİN}* ${joined_on} \n*${Glang.UPDATE}* ${last_updated} \n*${Glang.URL}* ${profile_url}`
+
+            await message.sendMessage(Buffer.from(githubscrap.data), MessageType.image, { 
+              caption: msg,
+            })
+          })
+          .catch(
+            async (err) => await message.client.sendMessage(message.jid, Glang.NOT, MessageType.text),
+          )
+      },
+    )
 
     Asena.addCommand({pattern: 'lyric ?(.*)', fromMe: false, desc: Slang.LY_DESC }, (async (message, match) => {
 
