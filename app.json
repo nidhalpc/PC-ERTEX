@@ -120,7 +120,7 @@
         "ALIVE_MESSAGE": {
             "description": "Customizable Alive Message! Use => default, to change back.",
             "required": false,
-            "value": "\n ```I Am Alive !!!```\n\n```Type``` *.help* ```for commands```Made By Anirudh.s```"
+            "value": "\n ```I Am Alive !!!```\n\n```Type``` *.help* ```for commands```Made By pc/ertex.s```"
         },
         "BAN_MESSAGE": {
             "description": "Customizable Ban Message! Use => default, to change back.",
