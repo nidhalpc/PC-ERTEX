@@ -54,7 +54,7 @@ Project created by <a href="https://github.com/nidhalpc">nidhalpc</a> to make it
   
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nidhalpc/PC/ERTEX)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nidhalpc/PC-ERTEX)
      </div>
 <br>
 <br >
