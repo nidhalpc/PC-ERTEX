@@ -1,9 +1,9 @@
 {
-    "name": "Eva",
-    "description": "Eva project - Makes it easy and fun to use Whatsapp. World’s first UserBot made for WhatsApp.",
+    "name": "PC/ERTEX",
+    "description": "PC/ERTEX project - Makes it easy and fun to use Whatsapp. World’s first UserBot made for WhatsApp.",
     "logo": "https://telegra.ph/file/fd4230902e75d397d8667.jpg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
-    "repository": "https://github.com/SudoAnirudh/Eva",
+    "repository": "https://github.com/SudoAnirudh/PC/ERTEX",
     "website":   "https://wa.me/919539102851",
     "success_url": "https://wa.me/919539102851",
     "stack": "container",
@@ -46,7 +46,7 @@
             "required": true,
             "value": "^[.!;]"
         },
-        "FULL_EVA": {
+        "FULL_PC/ERTEX": {
             "description": "Hesabınızı bir Chatbot'a Çevirin! Turn your account into a chatbot!",
             "required": true,
             "value": "false"
@@ -96,7 +96,7 @@
             "value": "default"
         },
         "WORK_TYPE": {
-            "description": "Eva Working Type. If you use “public”, everyone can use the bot. Else if you use “private”, only you can use your bot.",
+            "description": "PC/ERTEX Working Type. If you use “public”, everyone can use the bot. Else if you use “private”, only you can use your bot.",
             "required": true,
             "value": "private"
         },
