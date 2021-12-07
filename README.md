@@ -27,7 +27,7 @@
 </p>
 </div>
 <p align="center">
-Project created by <a href="https://github.com/nidhalpc">Anirudh</a> to make it public
+Project created by <a href="https://github.com/nidhalpc">nidhalpc</a> to make it public
     <br>
        | © |
         Reserved |
