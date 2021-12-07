@@ -17,13 +17,13 @@
 */
 
 function successfullMessage(msg) {
-    return "✅ *Eva*:  ```" + msg + "```"
+    return "✅ *PC-ERTEX*:  ```" + msg + "```"
 }
 function errorMessage(msg) {
-    return "🛑 *Eva*:  ```" + msg + "```"
+    return "🛑 *PC-ERTEX*:  ```" + msg + "```"
 }
 function infoMessage(msg) {
-    return "⏺️ *Eva*:  ```" + msg + "```"
+    return "⏺️ *PC-ERTEX*:  ```" + msg + "```"
 }
 
 
