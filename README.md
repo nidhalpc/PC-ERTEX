@@ -2,32 +2,32 @@
 <p align="center">
     <a href="https://git.io/J0hKr">
         <img
-            src="https://readme-typing-svg.herokuapp.com?size=30&width=800&lines=Welcome+To+Eva+Coded+By+Anirudh..."
+            src="https://readme-typing-svg.herokuapp.com?size=30&width=800&lines=Welcome+To+PC-ERTEX+Coded+By+nidhalpc..."
             alt="Typing SVG"
         />
     </a>
 </p>
 
 <div align="center">
-  <img border-radius: 15px src="https://telegra.ph/file/fd4230902e75d397d8667.jpg" width="200" height="200"/>
+  <img border-radius: 15px src="" width="200" height="200"/>
   <p align="center">
-<a href="#"><img title="Eva" src="https://img.shields.io/badge/Eva-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="PC-ERTEX" src="https://img.shields.io/badge/PC-ERTEX-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 
 
 
 <p align="center">
-<a href="https://wa.me/message/3UE3B6RT7XTLE1"><img title="Eva" src="https://img.shields.io/badge/Contact Eva-SudoAnirudh/Eva?color=black&style=for-the-badge&logo=whatsapp"></a>
+<a href="https://wa.me/message/3UE3B6RT7XTLE1"><img title="PC-ERTEX" src="https://img.shields.io/badge/Contact PC-ERTEX-nidhalpc/PC-ERTEX?color=black&style=for-the-badge&logo=whatsapp"></a>
 </p>
 </div>
 
 
   <p align="center">
-<a href="https://wa.me/919539102851"><img title="Author" src="https://img.shields.io/badge/Author-SudoAnirudh/Eva?color=black&style=for-the-badge&logo=whatsapp"></a>
+<a href="https://wa.me/918590875527"><img title="Author" src="https://img.shields.io/badge/Author-nidhalpc/PC-ERTEX?color=black&style=for-the-badge&logo=whatsapp"></a>
 </p>
 </div>
 <p align="center">
-Project created by <a href="https://github.com/SudoAnirudh">Anirudh</a> to make it public
+Project created by <a href="https://github.com/nidhalpc">Anirudh</a> to make it public
     <br>
        | © |
         Reserved |
@@ -37,13 +37,13 @@ Project created by <a href="https://github.com/SudoAnirudh">Anirudh</a> to make 
 ----
 
   <p align="center">
-  <a href="https://github.com/SudoAnirudh/Eva">
-    <img src="https://img.shields.io/github/repo-size/SudoAnirudh/Eva?color=green&label=Repo%20total%20size&style=italic">
+  <a href="https://github.com/nidhalpc/PC/ERTEX">
+    <img src="https://img.shields.io/github/repo-size/nidhalpc/PC/ERTEX?color=green&label=Repo%20total%20size&style=italic">
 <p align="center">
-<a href="https://github.com/SudoAnirudh/followers"><img title="Followers" src="https://img.shields.io/github/followers/SudoAnirudh?color=red&style=flat-circle"></a>
-<a href="https://github.com/SudoAnirudh/Eva/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/SudoAnirudh/Eva?color=red&style=flat-square"></a>
-<a href="https://github.com/SudoAnirudh/Eva/network/members"><img title="Forks" src="https://img.shields.io/github/forks/SudoAnirudh/Eva?color=red&style=flat-square"></a>
-<a href="https://github.com/SudoAnirudh/Eva/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/SudoAnirudh/Eva?label=Watchers&color=red&style=flat-square"></a>
+<a href="https://github.com/nidhalpc/followers"><img title="Followers" src="https://img.shields.io/github/followers/nidhalpc?color=red&style=flat-circle"></a>
+<a href="https://github.com/nidhalpc/PC/ERTEX/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/nidhalpc/PC/ERTEX?color=red&style=flat-square"></a>
+<a href="https://github.com/nidhalpc/PC/ERTEX/network/members"><img title="Forks" src="https://img.shields.io/github/forks/nidhalpc/PC/ERTEX?color=red&style=flat-square"></a>
+<a href="https://github.com/nidhalpc/PC/ERTEX/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/nidhalpc/PC/ERTEX?label=Watchers&color=red&style=flat-square"></a>
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/UNMAINTENED-YES-blue.svg"</a>
 
 
@@ -54,7 +54,7 @@ Project created by <a href="https://github.com/SudoAnirudh">Anirudh</a> to make 
   
 [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsasena)](https://repl.it/@phaticusthiccy/WhatsAsena-QR)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SudoAnirudh/Eva)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nidhalpc/PC/ERTEX)
      </div>
 <br>
 <br >
@@ -65,8 +65,8 @@ bash <(curl -L https://t.ly/tHxh)
 
 ### The Hard Method
 ``` js
-$ git clone https://github.com/SudoAnirudh/Eva.git
-$ cd Eva
+$ git clone https://github.com/nidhalpc/PC/ERTEX.git
+$ cd PC/ERTEX
 $ npm i @adiwajshing/baileys
 $ npm i chalk
 $ node qr.js
